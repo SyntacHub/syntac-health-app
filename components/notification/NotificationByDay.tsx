@@ -48,9 +48,10 @@ const NotificationByDay: React.FC<Props> = ({ data }) => {
         <FlatList
           data={data.items}
           ItemSeparatorComponent={() => <View style={{ marginVertical: 6 }} />}
-          renderItem={({ item, index }) => {
-            return <NoticationItem key={index} />;
+          renderItem={() => {
+            return <NoticationItem />;
           }}
+          keyExtractor={(item, idx) => idx.toString()}
         />
       </View>
     </View>

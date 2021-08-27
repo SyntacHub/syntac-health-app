@@ -58,11 +58,11 @@ const Dashboard: React.FC<Props> = () => {
           )}
           renderItem={({ item }) => (
             <RecentlyViewedProduct
-              key={item.brand}
               productName={item.brand}
               productCategory={item.shortDesc}
             />
           )}
+          keyExtractor={(item) => item.brand}
         />
       </View>
       <View style={styles.categoryContainer}>
@@ -87,6 +87,7 @@ const Dashboard: React.FC<Props> = () => {
               iconName={item.iconName}
             />
           )}
+          keyExtractor={(item) => item.title}
         />
       </View>
     </Container>

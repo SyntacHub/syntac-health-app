@@ -38,7 +38,6 @@ const Notification: React.FC<Props> = () => {
     <Container
       style={styles.container}
       background={Colors.background}
-      isScrollable
       additionalPaddingTop={0}
     >
       <View style={styles.header}>
@@ -49,9 +48,8 @@ const Notification: React.FC<Props> = () => {
         <FlatList
           data={items}
           ItemSeparatorComponent={() => <View style={{ marginVertical: 6 }} />}
-          renderItem={({ item }) => (
-            <NotificationByDay key={item.date} data={item} />
-          )}
+          renderItem={({ item }) => <NotificationByDay data={item} />}
+          keyExtractor={(item) => item.date}
         />
       </View>
     </Container>
