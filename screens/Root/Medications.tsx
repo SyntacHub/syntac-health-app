@@ -1,25 +1,27 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import Colors from "../../constants/Colors";
 
-import { RootTabScreenProps } from "../types";
+import { RootTabScreenProps } from "../../types";
 
-interface Props extends RootTabScreenProps<"TabOne"> {}
+interface Props extends RootTabScreenProps<"Medications"> {}
 
-const TabOneScreen: React.FC<Props> = () => {
+const Medications: React.FC<Props> = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.title}>Medications</Text>
     </View>
   );
 };
 
-export default TabOneScreen;
+export default Medications;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: Colors.white,
   },
   title: {
     fontSize: 20,

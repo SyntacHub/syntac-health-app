@@ -1,10 +1,10 @@
 export default {
   text: "#000",
-  loginBackground: "#005ABC",
-  background: "#fff",
+  background: "#005ABC",
   tint: "#2f95dc",
-  tabIconDefault: "#ccc",
+  tabIconDefault: "#B9BCBE",
   tabIconSelected: "#fff",
   facebook: "#1877F2",
   white: "#fff",
+  bottomTabBackground: "#F0F0F0",
 };

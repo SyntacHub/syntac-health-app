@@ -3,9 +3,9 @@ import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Colors from "../../constants/Colors";
 import useAuth from "../../store/useAuth";
-import { RootTabScreenProps } from "../../types";
+import { RootStackScreenProps } from "../../types";
 
-interface Props extends RootTabScreenProps<"TabOne"> {}
+interface Props extends RootStackScreenProps<"Login"> {}
 
 const LoginScreen: React.FC<Props> = () => {
   const { signIn } = useAuth();
@@ -42,7 +42,7 @@ export default LoginScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.loginBackground,
+    backgroundColor: Colors.background,
     paddingHorizontal: 16,
     paddingVertical: 8,
   },
