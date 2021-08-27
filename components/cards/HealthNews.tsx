@@ -4,23 +4,25 @@ import { StyleSheet, Text, View } from "react-native";
 import Colors from "../../constants/Colors";
 import Layout from "../../constants/Layout";
 
-interface Props {
+export interface IHealthNewsProps {
   primaryColor: string;
   secondaryColor: string;
   title: string;
   description: string;
+  iconName: React.ComponentProps<typeof FontAwesome>["name"];
 }
 
-const HealthNews: React.FC<Props> = ({
+const HealthNews: React.FC<IHealthNewsProps> = ({
   primaryColor,
   secondaryColor,
   title,
   description,
+  iconName,
 }) => {
   return (
     <View style={[styles.container, { backgroundColor: secondaryColor }]}>
       <View style={styles.iconContainer}>
-        <FontAwesome name="heart-o" size={16} color={primaryColor} />
+        <FontAwesome name={iconName} size={20} color={primaryColor} />
       </View>
       <Text style={[styles.title, { color: primaryColor }]}>{title}</Text>
       <Text style={styles.description}>{description}</Text>
@@ -38,8 +40,8 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
   },
   iconContainer: {
-    height: 32,
-    width: 32,
+    height: 36,
+    width: 36,
     backgroundColor: Colors.white,
     padding: 8,
     borderRadius: 20,

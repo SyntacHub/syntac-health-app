@@ -1,15 +1,21 @@
-import React from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Container from "../../components/Container";
-import Header from "../../components/Header";
-import Colors from "../../constants/Colors";
-
-import { RootTabScreenProps } from "../../types";
-import SearchBarInput from "../../components/inputs/SearchBarInput";
 import { useNavigation } from "@react-navigation/native";
-import RecentlyViewedProduct from "../../components/product/RecentlyViewedProduct";
+import React from "react";
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import FirstAidInfo from "../../components/cards/FirstAidInfo";
 import HealthNews from "../../components/cards/HealthNews";
+import Container from "../../components/Container";
+import SearchBarInput from "../../components/inputs/SearchBarInput";
+import RecentlyViewedProduct from "../../components/product/RecentlyViewedProduct";
+import Colors from "../../constants/Colors";
+import healthNews from "../../data/healthNews";
+import medicines from "../../data/medicines";
 
 interface Props {}
 
@@ -43,9 +49,20 @@ const Dashboard: React.FC<Props> = () => {
       <Text style={styles.greetings}>Good Day! Stefani Joanne</Text>
       <View style={styles.categoryContainer}>
         <Text style={styles.category}>Recently Viewed</Text>
-        <RecentlyViewedProduct
-          productName="Paracetamol - Biogesic"
-          productCategory="Coughs & Colds"
+        <FlatList
+          data={medicines.slice(0, 5)}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          ItemSeparatorComponent={() => (
+            <View style={{ marginHorizontal: 8 }} />
+          )}
+          renderItem={({ item }) => (
+            <RecentlyViewedProduct
+              key={item.brand}
+              productName={item.brand}
+              productCategory={item.shortDesc}
+            />
+          )}
         />
       </View>
       <View style={styles.categoryContainer}>
@@ -54,11 +71,22 @@ const Dashboard: React.FC<Props> = () => {
       </View>
       <View style={styles.categoryContainer}>
         <Text style={styles.category}>Health News and Update</Text>
-        <HealthNews
-          primaryColor="#F9B853"
-          secondaryColor="#FEF1DD"
-          title="Latest Coronavirus Infection updates"
-          description="Latest updates by the WHO. "
+        <FlatList
+          data={healthNews.slice(0, 5)}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          ItemSeparatorComponent={() => (
+            <View style={{ marginHorizontal: 8 }} />
+          )}
+          renderItem={({ item }) => (
+            <HealthNews
+              primaryColor={item.primaryColor}
+              secondaryColor={item.secondaryColor}
+              title={item.title}
+              description={item.description}
+              iconName={item.iconName}
+            />
+          )}
         />
       </View>
     </Container>
