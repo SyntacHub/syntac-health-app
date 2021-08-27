@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: Layout.window.width / 3 - 24,
     height: Layout.window.width / 3 - 24,
-    backgroundColor: Colors.productBackground,
+    backgroundColor: Colors.secondary,
     borderRadius: 8,
     justifyContent: "center",
     alignItems: "center",

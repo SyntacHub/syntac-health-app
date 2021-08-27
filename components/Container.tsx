@@ -10,6 +10,7 @@ type Props = {
   additionalPaddingTop?: number;
   offInsetTop?: boolean;
   isScrollable?: boolean;
+  background?: string;
 };
 
 const Container: React.FC<Props> = ({
@@ -18,6 +19,7 @@ const Container: React.FC<Props> = ({
   additionalPaddingTop = 16,
   isScrollable,
   offInsetTop,
+  background = "white",
 }) => {
   return (
     <SafeAreaInsetsContext.Consumer>
@@ -29,7 +31,7 @@ const Container: React.FC<Props> = ({
             style={[
               {
                 flex: 1,
-                backgroundColor: Colors.white,
+                backgroundColor: background ?? Colors.white,
                 paddingTop: topInset + additionalPaddingTop,
               },
             ]}

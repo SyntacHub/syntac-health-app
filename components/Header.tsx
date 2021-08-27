@@ -12,7 +12,7 @@ interface Props {
 
 const Header: React.FC<Props> = ({
   showBackButton = true,
-  iconColor = "black",
+  iconColor = "white",
 }) => {
   const navigation = useNavigation();
 
@@ -21,7 +21,7 @@ const Header: React.FC<Props> = ({
   if (showBackButton) {
     leftButton = (
       <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Feather name="arrow-left" size={24} color={"#000"} />
+        <Feather name="arrow-left" size={24} color={Colors[iconColor]} />
       </TouchableOpacity>
     );
   }
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
   leftContainer: {
     flex: 0.1,
-    height: 70,
+    height: 64,
     justifyContent: "center",
   },
   middleContainer: {
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
   rightContainer: {
     flex: 0.1,
-    height: 70,
+    height: 64,
     justifyContent: "center",
   },
 });
