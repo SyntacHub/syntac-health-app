@@ -19,9 +19,6 @@ export default Map;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: Colors.white,
   },
   title: {
     fontSize: 20,

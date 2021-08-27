@@ -1,8 +1,9 @@
 import { Feather } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React from "react";
+import React, { Fragment } from "react";
 import { Text, View } from "react-native";
 import Colors from "../constants/Colors";
 import LoginScreen from "../screens/Auth/LoginScreen";
@@ -12,7 +13,11 @@ import Map from "../screens/Root/Map";
 import Medications from "../screens/Root/Medications";
 import Notification from "../screens/Root/Notification";
 import useAuth from "../store/useAuth";
-import { RootStackParamList, RootTabParamList } from "../types";
+import {
+  DrawerStackParamList,
+  RootStackParamList,
+  BottomTabParamList,
+} from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 
 export default function Navigation() {
@@ -33,7 +38,7 @@ function RootNavigator() {
         <>
           <Stack.Screen
             name="Root"
-            component={BottomTabNavigator}
+            component={DrawerScreens}
             options={{ headerShown: false }}
           />
           <Stack.Group screenOptions={{ presentation: "modal" }}>
@@ -51,17 +56,35 @@ function RootNavigator() {
   );
 }
 
-const BottomTab = createBottomTabNavigator<RootTabParamList>();
+const Drawer = createDrawerNavigator<DrawerStackParamList>();
 
-function BottomTabNavigator() {
-  const bottomTabs: {
-    tabName: keyof RootTabParamList;
-    tabIcon: React.ComponentProps<typeof Feather>["name"];
-    component: React.ComponentType<any>;
-    name: string;
-  }[] = [
+const DrawerScreens: React.FC = () => {
+  return (
+    <Drawer.Navigator
+      initialRouteName="Dashboard"
+      screenOptions={{ headerShown: false }}
+    >
+      <Drawer.Screen name="Dashboard" component={BottomTabScreens} />
+      {/* <Drawer.Screen name="FaQs" component={Fragment} />
+      <Drawer.Screen name="ContactUs" component={Fragment} />
+      <Drawer.Screen name="PrivacyPolicy" component={Fragment} /> */}
+    </Drawer.Navigator>
+  );
+};
+
+type IBottomTab = {
+  tabName: keyof BottomTabParamList;
+  tabIcon: React.ComponentProps<typeof Feather>["name"];
+  component: React.ComponentType<any>;
+  name: string;
+}[];
+
+const BottomTab = createBottomTabNavigator<BottomTabParamList>();
+
+const BottomTabScreens: React.FC = () => {
+  const bottomTabs: IBottomTab = [
     {
-      tabName: "Dashboard",
+      tabName: "Home",
       tabIcon: "home",
       component: Dashboard,
       name: "Dashboard",
@@ -139,4 +162,4 @@ function BottomTabNavigator() {
       ))}
     </BottomTab.Navigator>
   );
-}
+};

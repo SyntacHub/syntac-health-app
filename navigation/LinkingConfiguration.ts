@@ -8,19 +8,20 @@ const linking: LinkingOptions<RootStackParamList> = {
   config: {
     screens: {
       Root: {
+        initialRouteName: "Dashboard",
         screens: {
-          TabOne: {
+          Dashboard: {
+            initialRouteName: "Home",
             screens: {
-              TabOneScreen: "one",
-            },
-          },
-          TabTwo: {
-            screens: {
-              TabTwoScreen: "two",
+              Home: "home",
+              Notification: "notification",
+              Map: "map",
+              Medications: "medications",
             },
           },
         },
       },
+      Login: "login",
       Modal: "modal",
       NotFound: "*",
     },

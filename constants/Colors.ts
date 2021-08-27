@@ -7,4 +7,5 @@ export default {
   facebook: "#1877F2",
   white: "#fff",
   bottomTabBackground: "#F0F0F0",
+  gray: "#bbb",
 };
