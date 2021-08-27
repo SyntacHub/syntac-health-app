@@ -14,7 +14,12 @@ declare global {
 export type RootStackParamList = {
   Root: NavigatorScreenParams<DrawerStackParamList>;
   Product: { id: number };
+  ProductMap: undefined;
   Search: undefined;
+  Purchase: { id: number };
+  QRCode: { id: number };
+  FirstAid: undefined;
+  Profile: undefined;
   Login: undefined;
   Modal: undefined;
   NotFound: undefined;

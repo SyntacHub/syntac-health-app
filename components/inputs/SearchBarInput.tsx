@@ -1,6 +1,7 @@
 import { FontAwesome } from "@expo/vector-icons";
 import React from "react";
-import { StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
+import Colors from "../../constants/Colors";
 
 interface Props {
   text?: string;
@@ -8,6 +9,24 @@ interface Props {
 }
 
 const SearchBarInput: React.FC<Props> = ({ text, setText }) => {
+  if (!setText) {
+    return (
+      <View style={styles.container}>
+        <FontAwesome name="search" size={20} color="#3f3f3f" />
+        <Text
+          style={{
+            marginLeft: 10,
+            fontFamily: "inter-regular",
+            lineHeight: 26,
+            color: Colors.gray,
+          }}
+        >
+          What are you looking for?
+        </Text>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
       <FontAwesome name="search" size={20} color="#3f3f3f" />

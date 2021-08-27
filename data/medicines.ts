@@ -170,4 +170,13 @@ export default [
     directions:
       "Orally (by mouth), 1 capsule once a day 30 minutes to 1 hour before breakfast with a full glass of water",
   },
+  {
+    id: 20,
+    generic: "Omerazole",
+    shortDesc: "Acid reflux relief",
+    brand: "Omepron",
+    desc: "For the short-term treatment and symptomatic relief of heartburn that occurs two or more days per week (frequent heartburn).",
+    directions:
+      "Orally (by mouth), 1 capsule once a day 30 minutes to 1 hour before breakfast with a full glass of water",
+  },
 ];

@@ -35,15 +35,17 @@ const Dashboard: React.FC<Props> = () => {
             }}
           />
         </TouchableOpacity>
-        <Image
-          source={require("../../assets/avatar.jpg")}
-          style={{
-            width: 36,
-            height: 36,
-            borderRadius: 18,
-            backgroundColor: Colors.gray,
-          }}
-        />
+        <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+          <Image
+            source={require("../../assets/avatar.jpg")}
+            style={{
+              width: 36,
+              height: 36,
+              borderRadius: 18,
+              backgroundColor: Colors.gray,
+            }}
+          />
+        </TouchableOpacity>
       </View>
       <Text style={styles.greetings}>Good Day! Stefani Joanne</Text>
       <TouchableOpacity onPress={() => navigation.navigate("Search")}>
@@ -70,7 +72,9 @@ const Dashboard: React.FC<Props> = () => {
       </View>
       <View style={styles.categoryContainer}>
         <Text style={styles.category}>Recommended for Homes</Text>
-        <FirstAidInfo />
+        <TouchableOpacity onPress={() => navigation.navigate("FirstAid")}>
+          <FirstAidInfo />
+        </TouchableOpacity>
       </View>
       <View style={styles.categoryContainer}>
         <Text style={styles.category}>Health News and Update</Text>

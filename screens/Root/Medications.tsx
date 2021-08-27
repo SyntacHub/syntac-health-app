@@ -1,3 +1,5 @@
+import { TouchableOpacity } from "@gorhom/bottom-sheet";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import Container from "../../components/Container";
@@ -6,11 +8,11 @@ import MedicationItem from "../../components/product/MedicationItem";
 import Colors from "../../constants/Colors";
 import Layout from "../../constants/Layout";
 import medicines from "../../data/medicines";
-import { RootTabScreenProps } from "../../types";
 
-interface Props extends RootTabScreenProps<"Medications"> {}
+interface Props {}
 
 const Medications: React.FC<Props> = () => {
+  const navigation = useNavigation<any>();
   return (
     <Container
       style={styles.container}
@@ -26,10 +28,14 @@ const Medications: React.FC<Props> = () => {
           data={medicines.slice(0, 15)}
           ItemSeparatorComponent={() => <View style={{ marginVertical: 8 }} />}
           renderItem={({ item }) => (
-            <MedicationItem
-              productName={item.brand}
-              productDescription={item.desc}
-            />
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Product", { id: item.id })}
+            >
+              <MedicationItem
+                productName={item.brand}
+                productDescription={item.desc}
+              />
+            </TouchableOpacity>
           )}
           keyExtractor={(item) => item.id.toString()}
         />

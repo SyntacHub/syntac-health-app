@@ -14,7 +14,15 @@ const Map: React.FC<Props> = () => {
 
   return (
     <View style={styles.container}>
-      <MapView style={styles.map} />
+      <MapView
+        initialRegion={{
+          latitude: 8.228,
+          longitude: 124.2452,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+        style={styles.map}
+      />
       <BottomSheet
         ref={bottomSheetRef}
         index={0}
@@ -31,7 +39,7 @@ const Map: React.FC<Props> = () => {
             ItemSeparatorComponent={() => (
               <View style={{ marginVertical: 6 }} />
             )}
-            renderItem={({ item }) => <PharmacyItem {...item} />}
+            renderItem={({ item }) => <PharmacyItem type="store" {...item} />}
             keyExtractor={(item) => item.id.toString()}
           />
         </BottomSheetScrollView>

@@ -44,7 +44,7 @@ const Product: React.FC<Props> = () => {
         </View>
         <View style={{ marginVertical: 8 }}>
           <TouchableOpacity
-            onPress={() => navigation.navigate("Map")}
+            onPress={() => navigation.navigate("ProductMap")}
             style={[styles.button, { backgroundColor: Colors.primary }]}
           >
             <Text style={[styles.buttonText, { color: Colors.white }]}>

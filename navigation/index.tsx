@@ -13,6 +13,10 @@ import Map from "../screens/Root/Map";
 import Medications from "../screens/Root/Medications";
 import Notification from "../screens/Root/Notification";
 import Product from "../screens/Root/Product";
+import ProductMap from "../screens/Root/ProductMap";
+import Profile from "../screens/Root/Profile";
+import Purchase from "../screens/Root/Purchase";
+import QRCode from "../screens/Root/QRCode";
 import Search from "../screens/Root/Search";
 import useAuth from "../store/useAuth";
 import {
@@ -21,6 +25,7 @@ import {
   RootStackParamList,
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
+import FirstAid from "../screens/Root/FirstAid";
 
 export default function Navigation() {
   return (
@@ -49,8 +54,33 @@ function RootNavigator() {
             options={{ headerShown: false }}
           />
           <Stack.Screen
+            name="ProductMap"
+            component={ProductMap}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
             name="Search"
             component={Search}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Purchase"
+            component={Purchase}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="QRCode"
+            component={QRCode}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="FirstAid"
+            component={FirstAid}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Profile"
+            component={Profile}
             options={{ headerShown: false }}
           />
           <Stack.Group screenOptions={{ presentation: "modal" }}>
