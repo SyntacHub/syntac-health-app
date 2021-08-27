@@ -5,12 +5,19 @@ import Header from "../../components/Header";
 import Colors from "../../constants/Colors";
 
 import { RootTabScreenProps } from "../../types";
+import SearchBarInput from "../../components/inputs/SearchBarInput";
+import { useNavigation } from "@react-navigation/native";
+import RecentlyViewedProduct from "../../components/product/RecentlyViewedProduct";
+import FirstAidInfo from "../../components/cards/FirstAidInfo";
+import HealthNews from "../../components/cards/HealthNews";
 
-interface Props extends RootTabScreenProps<"Dashboard"> {}
+interface Props {}
 
-const Dashboard: React.FC<Props> = ({ navigation }) => {
+const Dashboard: React.FC<Props> = () => {
+  const navigation = useNavigation<any>();
+
   return (
-    <Container style={styles.container}>
+    <Container style={styles.container} isScrollable>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.openDrawer()}>
           <Image
@@ -32,7 +39,28 @@ const Dashboard: React.FC<Props> = ({ navigation }) => {
           }}
         />
       </View>
-      <Text style={styles.title}>Good Day! Stefani Joanne</Text>
+      <SearchBarInput />
+      <Text style={styles.greetings}>Good Day! Stefani Joanne</Text>
+      <View style={styles.categoryContainer}>
+        <Text style={styles.category}>Recently Viewed</Text>
+        <RecentlyViewedProduct
+          productName="Paracetamol - Biogesic"
+          productCategory="Coughs & Colds"
+        />
+      </View>
+      <View style={styles.categoryContainer}>
+        <Text style={styles.category}>Recommended for Homes</Text>
+        <FirstAidInfo />
+      </View>
+      <View style={styles.categoryContainer}>
+        <Text style={styles.category}>Health News and Update</Text>
+        <HealthNews
+          primaryColor="#F9B853"
+          secondaryColor="#FEF1DD"
+          title="Latest Coronavirus Infection updates"
+          description="Latest updates by the WHO. "
+        />
+      </View>
     </Container>
   );
 };
@@ -49,10 +77,17 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
-  title: {
+  greetings: {
     width: "80%",
     fontSize: 24,
     fontFamily: "poppins-bold",
     lineHeight: 28,
+  },
+  categoryContainer: {
+    marginVertical: 8,
+  },
+  category: {
+    fontFamily: "inter-bold",
+    marginBottom: 10,
   },
 });
