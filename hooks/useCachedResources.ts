@@ -22,6 +22,7 @@ export default function useCachedResources() {
           "roboto-medium": require("../assets/fonts/Roboto/Roboto-Medium.ttf"),
           "inter-regular": require("../assets/fonts/Inter/Inter-Regular.ttf"),
           "inter-bold": require("../assets/fonts/Inter/Inter-Bold.ttf"),
+          "inter-semibold": require("../assets/fonts/Inter/Inter-SemiBold.ttf"),
           "inter-medium": require("../assets/fonts/Inter/Inter-Medium.ttf"),
         });
       } catch (e) {

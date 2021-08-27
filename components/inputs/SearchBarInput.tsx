@@ -1,16 +1,19 @@
 import { FontAwesome } from "@expo/vector-icons";
-import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import React from "react";
+import { StyleSheet, TextInput, View } from "react-native";
 
-const SearchBarInput = () => {
-  const [text, setText] = useState("");
+interface Props {
+  text?: string;
+  setText?: React.Dispatch<React.SetStateAction<string>>;
+}
 
+const SearchBarInput: React.FC<Props> = ({ text, setText }) => {
   return (
     <View style={styles.container}>
       <FontAwesome name="search" size={20} color="#3f3f3f" />
       <TextInput
         value={text}
-        onChangeText={(_text) => setText(_text)}
+        onChangeText={(_text) => !!setText && setText(_text)}
         style={styles.input}
         placeholder="What are you looking for?"
       />

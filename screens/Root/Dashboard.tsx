@@ -45,8 +45,10 @@ const Dashboard: React.FC<Props> = () => {
           }}
         />
       </View>
-      <SearchBarInput />
       <Text style={styles.greetings}>Good Day! Stefani Joanne</Text>
+      <TouchableOpacity onPress={() => navigation.navigate("Search")}>
+        <SearchBarInput />
+      </TouchableOpacity>
       <View style={styles.categoryContainer}>
         <Text style={styles.category}>Recently Viewed</Text>
         <FlatList
@@ -58,6 +60,7 @@ const Dashboard: React.FC<Props> = () => {
           )}
           renderItem={({ item }) => (
             <RecentlyViewedProduct
+              onPress={() => navigation.navigate("Product", { id: item.id })}
               productName={item.brand}
               productCategory={item.shortDesc}
             />
@@ -105,6 +108,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    marginBottom: 16,
   },
   greetings: {
     width: "80%",

@@ -1,5 +1,6 @@
 export default [
   {
+    id: 1,
     generic: "Paracetamol",
     brand: "Biogesic",
     shortDesc: "Fever",
@@ -8,6 +9,7 @@ export default [
       "Adults and children 12 years and older usually take 1 to 2 500mg tablets orally every 4 to 6 hours. Do not take more than 4g (8 tablets) in each 24-hour period. Do not use more than the recommended dose.",
   },
   {
+    id: 2,
     generic: "Ibuprofen",
     shortDesc: "Headache",
     brand: "Medicol Advance",
@@ -16,6 +18,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 3,
     generic: "Dextromethorphan HBr Phenylpropanolamine HCl Paracetamol",
     shortDesc: "Cough Relief",
     brand: "Tuseran® Forte",
@@ -24,6 +27,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 4,
     generic: "Co-Amoxiclav",
     shortDesc: "Antibacterial",
     brand: "Rafonex",
@@ -32,6 +36,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 5,
     generic: "Omerazole",
     shortDesc: "Acid reflux relief",
     brand: "Omepron",
@@ -40,6 +45,7 @@ export default [
       "Orally (by mouth), 1 capsule once a day 30 minutes to 1 hour before breakfast with a full glass of water",
   },
   {
+    id: 6,
     generic: "Mefenamic Acid",
     shortDesc: "Pain relief",
     brand: "Dolfinal",
@@ -48,6 +54,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 7,
     generic: "Carbocisteine + Zinc",
     shortDesc: "Cough",
     brand: "Solmux",
@@ -56,6 +63,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 8,
     generic: "Multivitamins",
     shortDesc: "Cough",
     brand: "Enervon Activ",
@@ -64,6 +72,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 9,
     generic: "Loperamide",
     shortDesc: "Diarrhea",
     brand: "Diatabs",
@@ -72,6 +81,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 10,
     generic: "Aluminum Hydroxide Magnesium Hydroxide Simeticone",
     shortDesc: "Diarrhea",
     brand: "Kremil-S",
@@ -80,6 +90,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 11,
     generic: "Ibuprofen",
     shortDesc: "Headache",
     brand: "Medicol Advance",
@@ -88,6 +99,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 12,
     generic: "Dextromethorphan HBr Phenylpropanolamine HCl Paracetamol",
     shortDesc: "Cough Relief",
     brand: "Tuseran® Forte",
@@ -96,6 +108,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 13,
     generic: "Multivitamins",
     shortDesc: "Cough",
     brand: "Enervon Activ",
@@ -104,6 +117,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 14,
     generic: "Loperamide",
     shortDesc: "Diarrhea",
     brand: "Diatabs",
@@ -112,6 +126,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 15,
     generic: "Paracetamol",
     shortDesc: "Biogesic",
     brand: "Fever",
@@ -120,6 +135,7 @@ export default [
       "Adults and children 12 years and older usually take 1 to 2 500mg tablets orally every 4 to 6 hours. Do not take more than 4g (8 tablets) in each 24-hour period. Do not use more than the recommended dose.",
   },
   {
+    id: 16,
     generic: "Co-Amoxiclav",
     shortDesc: "Antibacterial",
     brand: "Rafonex",
@@ -128,6 +144,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 17,
     generic: "Mefenamic Acid",
     shortDesc: "Pain relief",
     brand: "Dolfinal",
@@ -136,6 +153,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 18,
     generic: "Carbocisteine + Zinc",
     shortDesc: "Cough",
     brand: "Solmux",
@@ -144,6 +162,7 @@ export default [
       "This medicine is given orally and may be taken with food or milk if stomach upset occurs. Adults and children 12 years old and above: One softgel capsule up to 3 times a day, as needed. Leave at least 4 hours between each dose.",
   },
   {
+    id: 19,
     generic: "Omerazole",
     shortDesc: "Acid reflux relief",
     brand: "Omepron",

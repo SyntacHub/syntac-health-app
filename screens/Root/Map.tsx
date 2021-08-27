@@ -32,7 +32,7 @@ const Map: React.FC<Props> = () => {
               <View style={{ marginVertical: 6 }} />
             )}
             renderItem={({ item }) => <PharmacyItem {...item} />}
-            keyExtractor={(item) => item.name}
+            keyExtractor={(item) => item.id.toString()}
           />
         </BottomSheetScrollView>
       </BottomSheet>

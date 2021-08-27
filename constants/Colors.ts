@@ -1,5 +1,4 @@
 export default {
-  text: "#000",
   background: "#005ABC",
   primary: "#0659FD",
   secondary: "#CDDEFF",
@@ -10,4 +9,5 @@ export default {
   bottomTabBackground: "#F0F0F0",
   gray: "#bbb",
   infoBackground: "#E6EEFF",
+  text: "#444",
 };

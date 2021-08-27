@@ -13,6 +13,8 @@ declare global {
 
 export type RootStackParamList = {
   Root: NavigatorScreenParams<DrawerStackParamList>;
+  Product: { id: number };
+  Search: undefined;
   Login: undefined;
   Modal: undefined;
   NotFound: undefined;

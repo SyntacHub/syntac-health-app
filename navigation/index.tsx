@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React, { Fragment } from "react";
+import React from "react";
 import { Text, View } from "react-native";
 import Colors from "../constants/Colors";
 import LoginScreen from "../screens/Auth/LoginScreen";
@@ -12,11 +12,13 @@ import Dashboard from "../screens/Root/Dashboard";
 import Map from "../screens/Root/Map";
 import Medications from "../screens/Root/Medications";
 import Notification from "../screens/Root/Notification";
+import Product from "../screens/Root/Product";
+import Search from "../screens/Root/Search";
 import useAuth from "../store/useAuth";
 import {
+  BottomTabParamList,
   DrawerStackParamList,
   RootStackParamList,
-  BottomTabParamList,
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 
@@ -39,6 +41,16 @@ function RootNavigator() {
           <Stack.Screen
             name="Root"
             component={DrawerScreens}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Product"
+            component={Product}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Search"
+            component={Search}
             options={{ headerShown: false }}
           />
           <Stack.Group screenOptions={{ presentation: "modal" }}>
@@ -113,7 +125,7 @@ const BottomTabScreens: React.FC = () => {
     <BottomTab.Navigator
       initialRouteName={bottomTabs[0].tabName}
       screenOptions={{
-        tabBarActiveTintColor: Colors.tint,
+        tabBarActiveTintColor: Colors.secondary,
         headerShown: false,
         tabBarStyle: {
           position: "absolute",

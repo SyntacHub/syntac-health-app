@@ -31,7 +31,7 @@ const Medications: React.FC<Props> = () => {
               productDescription={item.desc}
             />
           )}
-          keyExtractor={(item, idx) => `${item.brand}-${idx}`}
+          keyExtractor={(item) => item.id.toString()}
         />
       </View>
     </Container>
