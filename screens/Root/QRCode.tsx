@@ -9,12 +9,13 @@ const QRCode = () => {
   const navigation = useNavigation<any>();
 
   return (
-    <Container style={styles.container} additionalPaddingTop={0}>
+    <Container style={styles.container} isScrollable additionalPaddingTop={0}>
       <Image
         style={{
           width: "80%",
           height: undefined,
           aspectRatio: 1,
+          alignSelf: "center",
         }}
         source={require("../../assets/images/sample-qrcode.png")}
       />
@@ -77,7 +78,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 16,
-    alignItems: "center",
   },
   mainButton: {
     width: "100%",
