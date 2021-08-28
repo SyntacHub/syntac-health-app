@@ -1,7 +1,7 @@
 # syntac-health-app
 IMPACT2050 Hackathon (Health) | PharmaSEE
 
-Figma Design Link : https://www.figma.com/file/Ttt71ahlPyxBM6NCZNsDtf/Impact-Hackathon-2021-HEALTH?node-id=0%3A1
+Figma Design Link : https://www.figma.com/file/Ttt71ahlPyxBM6NCZNsDtf/Impact-Hackathon-2021-HEALTH
 
 
 NOTICE :
