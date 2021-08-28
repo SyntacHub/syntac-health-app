@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     width: Layout.window.width / 2.5,
     borderRadius: 8,
     paddingHorizontal: 10,
-    paddingVertical: 16,
+    paddingVertical: 24,
   },
   iconContainer: {
     height: 36,
@@ -48,12 +48,12 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "inter-bold",
-    fontSize: 13,
+    fontSize: 14,
     marginTop: 10,
   },
   description: {
     marginTop: 6,
     fontFamily: "inter-medium",
-    fontSize: 11,
+    fontSize: 12,
   },
 });

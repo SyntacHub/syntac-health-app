@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     width: Layout.window.width,
     aspectRatio: 1,
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.background,
     borderBottomRightRadius: 28,
     borderBottomLeftRadius: 28,
     alignItems: "center",

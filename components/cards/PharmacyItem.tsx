@@ -1,6 +1,7 @@
 import { FontAwesome5 } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import Colors from "../../constants/Colors";
 
 interface Props {
   type: "store" | "medicine";
@@ -56,5 +57,6 @@ const styles = StyleSheet.create({
   },
   distance: {
     fontFamily: "inter-medium",
+    color: "#8f8f8f",
   },
 });

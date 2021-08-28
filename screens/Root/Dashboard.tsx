@@ -39,9 +39,9 @@ const Dashboard: React.FC<Props> = () => {
           <Image
             source={require("../../assets/avatar.jpg")}
             style={{
-              width: 36,
-              height: 36,
-              borderRadius: 18,
+              width: 50,
+              height: 50,
+              borderRadius: 25,
               backgroundColor: Colors.gray,
             }}
           />

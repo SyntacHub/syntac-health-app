@@ -11,4 +11,5 @@ export default {
   infoBackground: "#E6EEFF",
   text: "#444",
   black: "#000",
+  firstAidBackground: "#fda6ad",
 };

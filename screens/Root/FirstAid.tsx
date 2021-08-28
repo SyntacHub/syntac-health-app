@@ -18,12 +18,13 @@ const FirstAid = () => {
   return (
     <Container
       style={styles.container}
+      background={Colors.firstAidBackground}
       isScrollable
       offInsetTop
       additionalPaddingTop={0}
     >
       <View style={[styles.header, { paddingTop: insets.top }]}>
-        <Header />
+        <Header iconColor="black" />
         <View style={{ flex: 1 }}>
           <Image
             style={{
@@ -37,21 +38,45 @@ const FirstAid = () => {
         </View>
       </View>
       <View style={styles.content}>
-        <View style={{ flexDirection: "row" }}>
-          <View style={{ borderRadius: 80, backgroundColor: Colors.secondary }}>
-            <Feather name="star" size={24} color="black" />
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            marginBottom: 16,
+          }}
+        >
+          <View
+            style={{
+              height: 36,
+              width: 36,
+              borderRadius: 80,
+              backgroundColor: Colors.secondary,
+              justifyContent: "center",
+              alignItems: "center",
+              marginRight: 16,
+            }}
+          >
+            <Feather name="star" size={24} color={Colors.primary} />
           </View>
-          <Text>Recommended For Homes</Text>
+          <Text
+            style={{
+              fontFamily: "inter-bold",
+              color: "#787979",
+              textTransform: "uppercase",
+            }}
+          >
+            Recommended For Homes
+          </Text>
         </View>
         <Text style={{ fontFamily: "inter-bold", fontSize: 28 }}>
           Having a First Aid Kit
         </Text>
-        <Text style={{ fontFamily: "inter-medium", fontSize: 13 }}>
+        <Text style={{ fontFamily: "inter-bold", fontSize: 13 }}>
           First aid is emergency care given immediately to an injured person.
           The purpose of first aid is to minimize injury and future disability.
         </Text>
         <FlatList
-          contentContainerStyle={{ paddingVertical: 28 }}
+          contentContainerStyle={{ paddingVertical: 32 }}
           data={medicines.slice(0, 15)}
           ItemSeparatorComponent={() => <View style={{ marginVertical: 8 }} />}
           renderItem={({ item }) => (
