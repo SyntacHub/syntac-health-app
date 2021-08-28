@@ -1,6 +1,12 @@
 import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 import React, { useRef, useState } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import MapView, { Region } from "react-native-maps";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import PharmacyItem from "../../components/cards/PharmacyItem";
@@ -43,8 +49,15 @@ const PharmacyMap: React.FC<Props> = () => {
             ItemSeparatorComponent={() => (
               <View style={{ marginVertical: 6 }} />
             )}
-            renderItem={({ item }) => <PharmacyItem type="store" {...item} />}
+            renderItem={({ item }) => {
+              return (
+                <TouchableOpacity onPress={() => alert("Coming Soon!")}>
+                  <PharmacyItem type="store" {...item} />
+                </TouchableOpacity>
+              );
+            }}
             keyExtractor={(item) => item.id.toString()}
+            nestedScrollEnabled
           />
         </BottomSheetScrollView>
       </BottomSheet>

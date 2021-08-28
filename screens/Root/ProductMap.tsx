@@ -66,6 +66,7 @@ const ProductMap: React.FC<Props> = () => {
               </TouchableOpacity>
             )}
             keyExtractor={(item) => item.id.toString()}
+            nestedScrollEnabled
           />
         </BottomSheetScrollView>
       </BottomSheet>

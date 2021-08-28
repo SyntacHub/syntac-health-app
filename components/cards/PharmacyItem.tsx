@@ -16,7 +16,7 @@ export function randomNumberInterval(min: number, max: number) {
 
 const PharmacyItem: React.FC<Props> = ({ type, name, status, distance }) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <View style={styles.container}>
       <View style={{ marginRight: 10 }}>
         <FontAwesome5 name="clinic-medical" size={20} color="red" />
       </View>
@@ -32,7 +32,7 @@ const PharmacyItem: React.FC<Props> = ({ type, name, status, distance }) => {
         )}
         <Text style={styles.distance}>{distance}</Text>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 
