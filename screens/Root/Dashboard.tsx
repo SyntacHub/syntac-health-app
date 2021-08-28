@@ -72,9 +72,7 @@ const Dashboard: React.FC<Props> = () => {
       </View>
       <View style={styles.categoryContainer}>
         <Text style={styles.category}>Recommended for Homes</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("FirstAid")}>
-          <FirstAidInfo />
-        </TouchableOpacity>
+        <FirstAidInfo />
       </View>
       <View style={styles.categoryContainer}>
         <Text style={styles.category}>Health News and Update</Text>
@@ -116,9 +114,9 @@ const styles = StyleSheet.create({
   },
   greetings: {
     width: "80%",
-    fontSize: 24,
+    fontSize: 28,
     fontFamily: "poppins-bold",
-    lineHeight: 28,
+    lineHeight: 32,
   },
   categoryContainer: {
     marginVertical: 8,

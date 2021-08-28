@@ -8,11 +8,13 @@ import Colors from "../constants/Colors";
 interface Props {
   showBackButton?: boolean;
   iconColor?: keyof typeof Colors;
+  rightButton?: any;
 }
 
 const Header: React.FC<Props> = ({
   showBackButton = true,
   iconColor = "white",
+  rightButton,
 }) => {
   const navigation = useNavigation();
 
@@ -30,7 +32,7 @@ const Header: React.FC<Props> = ({
     <View style={[styles.container]}>
       {leftButton}
       <View style={styles.middleContainer} />
-      <View style={styles.leftContainer} />
+      <View style={styles.leftContainer}>{rightButton}</View>
     </View>
   );
 };
@@ -41,7 +43,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "transparent",
   },
   leftContainer: {
     flex: 0.1,

@@ -7,9 +7,9 @@ import Header from "../../components/Header";
 import pharmaciesNearby from "../../data/pharmaciesNearby";
 import { RootTabScreenProps } from "../../types";
 
-interface Props extends RootTabScreenProps<"Map"> {}
+interface Props extends RootTabScreenProps<"PharmacyMap"> {}
 
-const Map: React.FC<Props> = () => {
+const PharmacyMap: React.FC<Props> = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   return (
@@ -48,7 +48,7 @@ const Map: React.FC<Props> = () => {
   );
 };
 
-export default Map;
+export default PharmacyMap;
 
 const styles = StyleSheet.create({
   container: {

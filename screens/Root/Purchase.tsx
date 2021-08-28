@@ -10,6 +10,7 @@ import { randomNumberInterval } from "../../components/cards/PharmacyItem";
 import { TouchableOpacity } from "@gorhom/bottom-sheet";
 import Colors from "../../constants/Colors";
 import { AntDesign, FontAwesome } from "@expo/vector-icons";
+import Voucher from "../../components/cards/Voucher";
 
 const pieces = randomNumberInterval(18, 25);
 const price = randomNumberInterval(80, 120);
@@ -103,22 +104,7 @@ const Purchase = () => {
               More Vourchers ={">"}
             </Text>
           </View>
-          <View style={styles.voucherContainer}>
-            <View style={styles.vourcherHeader}>
-              <View style={styles.vourcherIconContainer}>
-                <FontAwesome name="bell-o" size={18} color={Colors.primary} />
-              </View>
-              <View style={styles.vourcherSubHeader}>
-                <Text style={styles.vourcherTitle}>
-                  ₱15 off Min. Spend ₱200{" "}
-                </Text>
-                <Text style={styles.vourcherPharmacy}>Mercury Drug</Text>
-              </View>
-            </View>
-            <Text style={styles.vourcherDescription}>
-              Purchase Any items from our pharmacy and get big discounts!
-            </Text>
-          </View>
+          <Voucher />
         </View>
         <View style={{ marginVertical: 10 }} />
         <TouchableOpacity
@@ -216,36 +202,5 @@ const styles = StyleSheet.create({
   },
   mainButtonText: {
     fontFamily: "inter-semibold",
-  },
-  voucherContainer: {
-    backgroundColor: Colors.secondary,
-    borderRadius: 10,
-    paddingHorizontal: 16,
-    paddingVertical: 16,
-  },
-  vourcherHeader: {
-    flexDirection: "row",
-  },
-  vourcherIconContainer: {
-    backgroundColor: Colors.white,
-    borderRadius: 50,
-    height: 32,
-    width: 32,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  vourcherIcon: {},
-  vourcherSubHeader: {
-    marginLeft: 12,
-  },
-  vourcherTitle: {
-    fontFamily: "inter-bold",
-  },
-  vourcherPharmacy: {
-    fontFamily: "inter-regular",
-  },
-  vourcherDescription: {
-    fontFamily: "inter-medium",
-    marginTop: 8,
   },
 });

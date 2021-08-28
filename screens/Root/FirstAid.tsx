@@ -2,7 +2,9 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Container from "../../components/Container";
+import Header from "../../components/Header";
 import MedicationItem from "../../components/product/MedicationItem";
 import Colors from "../../constants/Colors";
 import Layout from "../../constants/Layout";
@@ -10,19 +12,28 @@ import medicines from "../../data/medicines";
 
 const FirstAid = () => {
   const navigation = useNavigation<any>();
+  const insets = useSafeAreaInsets();
 
   return (
-    <Container style={styles.container} additionalPaddingTop={0}>
-      <View style={styles.header}>
-        <Image
-          style={{
-            width: "35%",
-            height: undefined,
-            aspectRatio: 1,
-          }}
-          resizeMode="contain"
-          source={require("../../assets/images/doctor.png")}
-        />
+    <Container
+      style={styles.container}
+      isScrollable
+      offInsetTop
+      additionalPaddingTop={0}
+    >
+      <View style={[styles.header, { paddingTop: insets.top }]}>
+        <Header />
+        <View style={{ flex: 1 }}>
+          <Image
+            style={{
+              width: "55%",
+              height: undefined,
+              aspectRatio: 1,
+            }}
+            resizeMode="contain"
+            source={require("../../assets/images/doctor.png")}
+          />
+        </View>
       </View>
       <View style={styles.content}>
         <View>
@@ -58,13 +69,15 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   header: {
-    paddingHorizontal: 16,
+    paddingHorizontal: 8,
     paddingBottom: 16,
     width: Layout.window.width,
-    aspectRatio: 7 / 5,
-    backgroundColor: Colors.primary,
+    aspectRatio: 1,
+    backgroundColor: "#fda6ad",
     borderBottomRightRadius: 28,
     borderBottomLeftRadius: 28,
+    justifyContent: "center",
+    alignItems: "center",
   },
   content: {
     paddingVertical: 16,

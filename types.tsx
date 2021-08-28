@@ -44,7 +44,7 @@ export type DrawerStackScreenProps<Screen extends keyof DrawerStackParamList> =
 export type BottomTabParamList = {
   Home: undefined;
   Notification: undefined;
-  Map: undefined;
+  PharmacyMap: undefined;
   Medications: undefined;
 };
 

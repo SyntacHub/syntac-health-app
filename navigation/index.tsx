@@ -9,7 +9,7 @@ import Colors from "../constants/Colors";
 import LoginScreen from "../screens/Auth/LoginScreen";
 import ModalScreen from "../screens/ModalScreen";
 import Dashboard from "../screens/Root/Dashboard";
-import Map from "../screens/Root/Map";
+import PharmacyMap from "../screens/Root/PharmacyMap";
 import Medications from "../screens/Root/Medications";
 import Notification from "../screens/Root/Notification";
 import Product from "../screens/Root/Product";
@@ -138,9 +138,9 @@ const BottomTabScreens: React.FC = () => {
       name: "Notification",
     },
     {
-      tabName: "Map",
+      tabName: "PharmacyMap",
       tabIcon: "map",
-      component: Map,
+      component: PharmacyMap,
       name: "Pharmancy Map",
     },
     {
@@ -159,7 +159,7 @@ const BottomTabScreens: React.FC = () => {
         headerShown: false,
         tabBarStyle: {
           position: "absolute",
-          bottom: 25,
+          bottom: 10,
           left: 20,
           right: 20,
           backgroundColor: Colors.bottomTabBackground,

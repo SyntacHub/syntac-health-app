@@ -2,6 +2,7 @@ import { Feather } from "@expo/vector-icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Container from "../../components/Container";
 import Header from "../../components/Header";
 import Colors from "../../constants/Colors";
@@ -13,12 +14,18 @@ interface Props {}
 const Product: React.FC<Props> = () => {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
+  const insets = useSafeAreaInsets();
 
   const product = medicines[route.params.id - 1];
 
   return (
-    <Container style={styles.container} isScrollable additionalPaddingTop={0}>
-      <View style={styles.header}>
+    <Container
+      style={styles.container}
+      isScrollable
+      offInsetTop
+      additionalPaddingTop={0}
+    >
+      <View style={[styles.header, { paddingTop: insets.top }]}>
         <Header />
         <View style={styles.imageContainer}>
           <Image

@@ -15,7 +15,7 @@ const linking: LinkingOptions<RootStackParamList> = {
             screens: {
               Home: "home",
               Notification: "notification",
-              Map: "map",
+              PharmacyMap: "map",
               Medications: "medications",
             },
           },
