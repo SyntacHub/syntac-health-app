@@ -10,7 +10,14 @@ const QRCode = () => {
 
   return (
     <Container style={styles.container} additionalPaddingTop={0}>
-      <Image source={require("../../assets/images/sample-qrcode.png")} />
+      <Image
+        style={{
+          width: "80%",
+          height: undefined,
+          aspectRatio: 1,
+        }}
+        source={require("../../assets/images/sample-qrcode.png")}
+      />
       <Text
         style={{
           fontFamily: "inter-medium",

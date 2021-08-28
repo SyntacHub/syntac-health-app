@@ -82,7 +82,7 @@ const Purchase = () => {
             </View>
           </View>
         </View>
-        <View style={{ marginVertical: 12 }}>
+        <View style={{ marginTop: 32, marginBottom: 16 }}>
           <View
             style={{
               marginBottom: 8,
