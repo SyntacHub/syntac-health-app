@@ -141,7 +141,7 @@ const BottomTabScreens: React.FC = () => {
       tabName: "PharmacyMap",
       tabIcon: "map",
       component: PharmacyMap,
-      name: "Pharmancy Map",
+      name: "Pharmacy Map",
     },
     {
       tabName: "Medications",

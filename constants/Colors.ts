@@ -10,4 +10,5 @@ export default {
   gray: "#bbb",
   infoBackground: "#E6EEFF",
   text: "#444",
+  black: "#000",
 };

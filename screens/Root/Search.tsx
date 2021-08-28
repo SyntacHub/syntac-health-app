@@ -1,4 +1,4 @@
-import { AntDesign } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import {
@@ -22,7 +22,23 @@ const Search = () => {
 
   return (
     <Container style={styles.container} background={Colors.white}>
-      <SearchBarInput text={text} setText={setText} />
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <SearchBarInput text={text} setText={setText} />
+        <TouchableOpacity
+          style={{ paddingHorizontal: 12, borderRadius: 12 }}
+          onPress={() => navigation.goBack()}
+        >
+          <Text
+            style={{
+              fontFamily: "inter-bold",
+              color: Colors.primary,
+              fontSize: 14,
+            }}
+          >
+            Cancel
+          </Text>
+        </TouchableOpacity>
+      </View>
       {!!(text === "") && (
         <>
           <Text style={styles.label}>Search History</Text>
@@ -37,15 +53,15 @@ const Search = () => {
             renderItem={({ item }) => (
               <TouchableOpacity
                 onPress={() => setText(item)}
-                style={{ flexDirection: "row" }}
+                style={{ flexDirection: "row", alignItems: "center" }}
               >
-                <AntDesign name="rightsquareo" size={24} color="black" />
+                <FontAwesome name="search" size={24} color="#3f3f3f" />
                 <Text style={styles.item}>{item}</Text>
               </TouchableOpacity>
             )}
             keyExtractor={(_, idx) => idx.toString()}
             ItemSeparatorComponent={() => (
-              <View style={{ marginVertical: 8 }} />
+              <View style={{ marginVertical: 12 }} />
             )}
           />
         </>

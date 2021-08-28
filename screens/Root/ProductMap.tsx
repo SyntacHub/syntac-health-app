@@ -7,7 +7,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import MapView, { Region } from "react-native-maps";
 import Modal from "react-native-modal";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import Header from "../../components/Header";
 import PharmacyItem from "../../components/cards/PharmacyItem";
+import Container from "../../components/Container";
 import Colors from "../../constants/Colors";
 import Layout from "../../constants/Layout";
 import pharmaciesNearby from "../../data/pharmaciesNearby";
@@ -16,9 +19,15 @@ interface Props {}
 
 const ProductMap: React.FC<Props> = () => {
   const navigation = useNavigation<any>();
-  const [region, setRegion] = useState<Region>();
+  const [region, setRegion] = useState<Region>({
+    latitude: 8.228,
+    longitude: 124.2452,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  });
   const bottomSheetRef = useRef<BottomSheet>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const insets = useSafeAreaInsets();
 
   useEffect(() => {}, []);
 
@@ -77,16 +86,17 @@ const ProductMap: React.FC<Props> = () => {
           </View>
         </View>
       </Modal>
-      <View style={styles.container}>
-        <MapView
-          initialRegion={{
-            latitude: 8.228,
-            longitude: 124.2452,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}
-          style={styles.map}
-        />
+      <Container
+        style={styles.container}
+        background={Colors.background}
+        isScrollable
+        offInsetTop
+        additionalPaddingTop={0}
+      >
+        <View style={{ paddingTop: insets.top, paddingHorizontal: 16 }}>
+          <Header iconColor="black" />
+        </View>
+        <MapView initialRegion={region} style={styles.map} />
         <BottomSheet
           ref={bottomSheetRef}
           index={0}
@@ -122,7 +132,7 @@ const ProductMap: React.FC<Props> = () => {
             />
           </BottomSheetScrollView>
         </BottomSheet>
-      </View>
+      </Container>
     </>
   );
 };

@@ -128,8 +128,8 @@ export default [
   {
     id: 15,
     generic: "Paracetamol",
-    shortDesc: "Biogesic",
-    brand: "Fever",
+    shortDesc: "Fever",
+    brand: "Biogesic",
     desc: "For the relief of minor aches and pains such as headache, backache, menstrual cramps, muscular aches, minor arthritis pain, toothache, and pain associated with the common cold and flu and for fever reduction.",
     directions:
       "Adults and children 12 years and older usually take 1 to 2 500mg tablets orally every 4 to 6 hours. Do not take more than 4g (8 tablets) in each 24-hour period. Do not use more than the recommended dose.",

@@ -1,4 +1,4 @@
-import { FontAwesome5, MaterialIcons, FontAwesome } from "@expo/vector-icons";
+import { FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 import { useNavigation } from "@react-navigation/native";
 import React, { useRef } from "react";
@@ -22,7 +22,7 @@ const Profile = () => {
     <>
       <Container
         style={styles.container}
-        background={Colors.primary}
+        background={Colors.background}
         isScrollable
         offInsetTop
         additionalPaddingTop={0}
@@ -37,14 +37,14 @@ const Profile = () => {
                   }
                 }}
               >
-                <FontAwesome5 name="qrcode" size={24} color={Colors.white} />
+                <FontAwesome name="ticket" size={24} color="white" />
               </TouchableOpacity>
             }
           />
           <Image
             style={{
               borderRadius: 200,
-              width: "35%",
+              width: "45%",
               height: undefined,
               aspectRatio: 1,
               marginBottom: 10,
@@ -55,7 +55,7 @@ const Profile = () => {
           <Text
             style={{
               color: Colors.white,
-              fontFamily: "inter-bold",
+              fontFamily: "poppins-bold",
               fontSize: 28,
             }}
           >
@@ -79,7 +79,7 @@ const Profile = () => {
               }}
             >
               <FontAwesome name="plus" size={24} color="#FD4E5D" />
-              <View style={{ flex: 1, marginLeft: 4 }}>
+              <View style={{ flex: 1, marginLeft: 12 }}>
                 <Text style={{ fontFamily: "inter-medium" }}>
                   Items Searched:
                 </Text>
@@ -95,7 +95,7 @@ const Profile = () => {
                 alignItems: "center",
               }}
             >
-              <View style={{ flex: 1, marginRight: 4 }}>
+              <View style={{ flex: 1, marginRight: 12 }}>
                 <Text style={{ fontFamily: "inter-medium" }}>
                   Pharmacies Discovered:
                 </Text>
@@ -104,7 +104,7 @@ const Profile = () => {
               <MaterialIcons
                 name="local-pharmacy"
                 size={24}
-                color={Colors.primary}
+                color={Colors.background}
               />
             </View>
           </View>
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   content: {
-    paddingVertical: 40,
+    paddingVertical: 80,
     paddingHorizontal: 24,
     backgroundColor: Colors.white,
     zIndex: -1,
@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
   statContainer: {
     zIndex: 10,
     marginTop: "auto",
-    marginBottom: -40,
+    marginBottom: -70,
     height: 80,
     width: "90%",
     flexDirection: "row",

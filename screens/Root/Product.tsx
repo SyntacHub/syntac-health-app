@@ -26,7 +26,7 @@ const Product: React.FC<Props> = () => {
       additionalPaddingTop={0}
     >
       <View style={[styles.header, { paddingTop: insets.top }]}>
-        <Header />
+        <Header iconColor="text" />
         <View style={styles.imageContainer}>
           <Image
             resizeMode="contain"
@@ -37,19 +37,19 @@ const Product: React.FC<Props> = () => {
       </View>
       <View style={styles.content}>
         <View>
-          <Text style={styles.title}>{product.generic}</Text>
-          <Text style={styles.type}>{product.brand}</Text>
+          <Text style={styles.brand}>{product.brand}</Text>
+          <Text style={styles.generic}>{product.generic}</Text>
           <Text style={styles.size}>20 Tablets Per Pack</Text>
         </View>
-        <View style={{ marginVertical: 8 }}>
+        <View style={{ marginVertical: 12 }}>
           <Text style={styles.descriptionLabel}>Description</Text>
           <Text style={styles.description}>{product.desc}</Text>
         </View>
-        <View style={{ marginVertical: 8 }}>
+        <View style={{ marginVertical: 12 }}>
           <Text style={styles.descriptionLabel}>Directions</Text>
           <Text style={styles.description}>{product.directions}</Text>
         </View>
-        <View style={{ marginVertical: 8 }}>
+        <View style={{ marginVertical: 12 }}>
           <TouchableOpacity
             onPress={() => navigation.navigate("ProductMap")}
             style={[styles.button, { backgroundColor: Colors.primary }]}
@@ -61,7 +61,7 @@ const Product: React.FC<Props> = () => {
           </TouchableOpacity>
           <View style={{ marginVertical: 8 }} />
           <TouchableOpacity
-            onPress={() => navigation.navigate("Medication")}
+            onPress={() => navigation.navigate("Medications")}
             style={[styles.button, { backgroundColor: Colors.secondary }]}
           >
             <Text style={[styles.buttonText, { color: Colors.primary }]}>
@@ -90,6 +90,14 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.secondary,
     borderBottomRightRadius: 28,
     borderBottomLeftRadius: 28,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+    elevation: 2,
   },
   imageContainer: {
     flex: 1,
@@ -110,14 +118,14 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     paddingHorizontal: 24,
   },
-  title: {
+  brand: {
     fontFamily: "inter-bold",
     fontSize: 24,
     color: Colors.text,
   },
-  type: {
+  generic: {
     fontFamily: "inter-semibold",
-    fontSize: 14,
+    fontSize: 18,
     color: Colors.text,
   },
   descriptionLabel: {

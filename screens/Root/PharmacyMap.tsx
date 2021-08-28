@@ -1,8 +1,10 @@
 import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import MapView from "react-native-maps";
+import MapView, { Region } from "react-native-maps";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import PharmacyItem from "../../components/cards/PharmacyItem";
+import Container from "../../components/Container";
 import Header from "../../components/Header";
 import pharmaciesNearby from "../../data/pharmaciesNearby";
 import { RootTabScreenProps } from "../../types";
@@ -11,18 +13,20 @@ interface Props extends RootTabScreenProps<"PharmacyMap"> {}
 
 const PharmacyMap: React.FC<Props> = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
+  const [region, setRegion] = useState<Region>({
+    latitude: 8.228,
+    longitude: 124.2452,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  });
+  const insets = useSafeAreaInsets();
 
   return (
-    <View style={styles.container}>
-      <MapView
-        initialRegion={{
-          latitude: 8.228,
-          longitude: 124.2452,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-        style={styles.map}
-      />
+    <Container style={styles.container} offInsetTop additionalPaddingTop={0}>
+      <View style={{ paddingTop: insets.top, paddingHorizontal: 16 }}>
+        <Header iconColor="black" />
+      </View>
+      <MapView initialRegion={region} style={styles.map} />
       <BottomSheet
         ref={bottomSheetRef}
         index={0}
@@ -44,7 +48,7 @@ const PharmacyMap: React.FC<Props> = () => {
           />
         </BottomSheetScrollView>
       </BottomSheet>
-    </View>
+    </Container>
   );
 };
 
@@ -61,6 +65,7 @@ const styles = StyleSheet.create({
   },
   map: {
     ...StyleSheet.absoluteFillObject,
+    zIndex: -1,
   },
   title: {
     fontFamily: "inter-bold",

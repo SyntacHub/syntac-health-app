@@ -31,7 +31,7 @@ const LoginScreen: React.FC<Props> = () => {
         </TouchableOpacity>
       </View>
       <Text style={styles.footer}>
-        Syntac Organization{"\n"} © 2021 All Rights Reserved
+        Syntac Organization{"\n"}© 2021 All Rights Reserved
       </Text>
     </View>
   );

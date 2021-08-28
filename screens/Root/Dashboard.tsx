@@ -47,7 +47,7 @@ const Dashboard: React.FC<Props> = () => {
           />
         </TouchableOpacity>
       </View>
-      <Text style={styles.greetings}>Good Day! Stefani Joanne</Text>
+      <Text style={styles.greetings}>Good Day!{"\n"}Stefani Joanne</Text>
       <TouchableOpacity onPress={() => navigation.navigate("Search")}>
         <SearchBarInput />
       </TouchableOpacity>
@@ -75,7 +75,7 @@ const Dashboard: React.FC<Props> = () => {
         <FirstAidInfo />
       </View>
       <View style={styles.categoryContainer}>
-        <Text style={styles.category}>Health News and Update</Text>
+        <Text style={styles.category}>Health News and Updates</Text>
         <FlatList
           data={healthNews.slice(0, 5)}
           horizontal
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     lineHeight: 32,
   },
   categoryContainer: {
-    marginVertical: 8,
+    marginVertical: 12,
   },
   category: {
     fontFamily: "inter-bold",
